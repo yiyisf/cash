@@ -4,7 +4,6 @@
 import React from 'react';
 import {
     StyleSheet,
-    Navigator,
     StatusBar,
     BackAndroid,
     View,
@@ -12,8 +11,7 @@ import {
     StatusBarIOS,
     NavigatorIOS,
 } from 'react-native';
-
-import {} from 'react-native'
+import {Navigator} from 'react-native-deprecated-custom-components';
 
 import Splash from './Ready';
 import AppMain from './AppMain';
@@ -49,7 +47,7 @@ class rootApp extends React.Component {
                     barStyle='light-content'
                     backgroundColor='#006f53'
                 />
-                <NavigatorIOS
+                <Navigator
                     ref='navigator'
                     style={{flex: 1}}
                     configureScene={this.configureScene}

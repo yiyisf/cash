@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import{
     View,
     Text,
-    BackAndroid,
+    BackHandler,
     TouchableOpacity,
     Image,
     StyleSheet,
@@ -17,19 +17,31 @@ import{
 } from 'react-native';
 // import styles from '../../common/Style';
 import ImagePicker from 'react-native-image-picker';
-
+import {NaviGoBack} from '../../common/CommonUtils';
 class Identity extends Component {
 
 
     constructor(props) {
         super();
-
+        this.buttonBackAction = this.buttonBackAction.bind(this);
     }
 
     state = {
         avatarSource: null,
         videoSource: null
     };
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
+    }
+
+    buttonBackAction() {
+        const {navigator} = this.props;
+        return NaviGoBack(navigator);
+    }
 
     selectPhotoTapped() {
         const options = {
@@ -38,7 +50,11 @@ class Identity extends Component {
             maxHeight: 500,
             storageOptions: {
                 skipBackup: true
-            }
+            },
+            title:'请选择照片或拍照:',
+            takePhotoButtonTitle:'拍照',
+            cancelButtonTitle:'取消',
+            chooseFromLibraryButtonTitle:'图库',
         };
 
         ImagePicker.showImagePicker(options, (response) => {

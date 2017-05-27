@@ -15,7 +15,7 @@ import{
 
 import Setting from './UserCenter/Setting';
 import More from './UserCenter/More';
-import Login from './UserCenter/Login';
+// import Login from './UserCenter/Login';
 import CenterItem from '../component/CenterItem';
 import ImageButton from '../component/ImageButton';
 import ModifyInformation from './UserCenter/ModifyInformation';
@@ -23,6 +23,7 @@ import Charge from './UserCenter/Charge';
 import Prepaid from './UserCenter/Prepaid';
 import Withdraw from './UserCenter/Withdraw';
 import styles from '../common/Style';
+import LoginDigits from "./UserCenter/LoginDigits";
 
 var {height, width} =  Dimensions.get('window');
 
@@ -51,8 +52,8 @@ class User extends Component {
         const {navigator} = this.props;
         InteractionManager.runAfterInteractions(() => {
             navigator.push({
-                component: Login,
-                name: 'Login'
+                component: LoginDigits,
+                name: 'LoginDigits'
             });
         });
     }
