@@ -32,10 +32,10 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <meta-data
                 android:name="io.Digits.ApiKey"
-                android:value="ebc1a7a20d10c077ec39bbab8d2a2985c09b161f" />
+                android:value="hZO8CaNJCjYjRftAzodS4wGHL" />
         <meta-data
                 android:name="io.Digits.ApiSecret"
-                android:value="68d12326767ed585de67c3aa22a9982556eee5d9e6a98628639e64f63023156c" />
+                android:value="5xq9KlGgSVryR6nSwZwr9cZdcc8EqjxoY0VdjpwTTRpoA0AlXQ" />
     </application>
 
 </manifest>
