@@ -8,6 +8,7 @@ import{
     Image,
     StyleSheet,
     InteractionManager,
+    Alert,
 } from 'react-native';
 
 import { NaviGoBack } from '../../common/CommonUtils';
@@ -20,6 +21,7 @@ import ResetPwd from  './ResetPwd';
 import Prepaid from './Prepaid';
 import styles from '../../common/Style';
 import Qrcode from '../Qrcode';
+import QrScanner from '../QrScanner';
 
 class Setting extends Component {
   constructor(props) {
@@ -88,6 +90,18 @@ class Setting extends Component {
                   name: 'Qrcode'
               });
           });
+      }else if(position === 10){
+          InteractionManager.runAfterInteractions(() => {
+              navigator.push({
+                  component: QrScanner,
+                  name: 'QrScanner',
+                  passProps:{
+                      onSucess:(result)=>{
+                          Alert.alert('扫码内容', result);
+                      },
+                  }
+              });
+          });
       }
   }
 
@@ -125,6 +139,8 @@ class Setting extends Component {
                     <SettingItem title="关于我们" onPress={()=>{this.itemButtonAction(8)}}/>
                     <ShortLine/>
                     <SettingItem title="二维码" onPress={()=>{this.itemButtonAction(9)}}/>
+                    <ShortLine/>
+                    <SettingItem title="扫码" onPress={()=>{this.itemButtonAction(10)}}/>
                     <View style={{flex:1,justifyContent:'flex-end'}}>
                         <TouchableOpacity style={styles.item_layout} onPress={()=>{this.itemButtonAction(0)}}>
                             <Text style={{marginLeft:10, color:'darkslategrey'}}>清空缓存</Text>
