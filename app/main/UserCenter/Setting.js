@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import{ 
     View,
     Text,
-    BackAndroid,
+    BackHandler,
     TouchableOpacity,
     Image,
     StyleSheet,
@@ -28,10 +28,10 @@ class Setting extends Component {
   }
 
     componentWillMount(){
-        BackAndroid.addEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
     }
     componentWillUnmount(){
-        BackAndroid.removeEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
   //返回
@@ -115,13 +115,15 @@ class Setting extends Component {
                     <SettingItem title="条款" onPress={()=>{this.itemButtonAction(7)}}/>
                     <ShortLine/>
                     <SettingItem title="关于我们" onPress={()=>{this.itemButtonAction(8)}}/>
+                    <ShortLine/>
+                    <SettingItem title="二维码" onPress={()=>{this.itemButtonAction(9)}}/>
                     <View style={{flex:1,justifyContent:'flex-end'}}>
                         <TouchableOpacity style={styles.item_layout} onPress={()=>{this.itemButtonAction(0)}}>
-                            <Text style={{marginLeft:10}}>清空缓存</Text>   
+                            <Text style={{marginLeft:10, color:'darkslategrey'}}>清空缓存</Text>
                         </TouchableOpacity>
                         <ShortLine/>
                         <TouchableOpacity style={styles.item_layout} onPress={()=>{this.itemButtonAction(1)}}>
-                            <Text style={{marginLeft:10}}>注销登录</Text>   
+                            <Text style={{marginLeft:10, color:'darkslategrey'}}>注销登录</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

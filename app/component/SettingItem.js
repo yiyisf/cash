@@ -14,7 +14,7 @@ import{
 const SettingItem = ({ onPress, title}) => (
   <TouchableOpacity style={styles.wrap_style} onPress={onPress}>
      <View style={{flexDirection:'row'}}>
-        <View style={styles.item_view}><Text style={{marginLeft:10,fontSize:13}}>{title}</Text></View>
+        <View style={styles.item_view}><Text style={{marginLeft:10,fontSize:13, color:'darkslategrey'}}>{title}</Text></View>
         <View style={styles.item_arrow_view}>
             <Image source={require('../imgs/ic_center_right_arrow.png')} 
                    style={{width:12,height:18}}/>

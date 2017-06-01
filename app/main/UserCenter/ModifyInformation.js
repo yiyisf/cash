@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import{
     View,
     Text,
-    BackAndroid,
+    BackHandler,
     TouchableOpacity,
     Image,
     StyleSheet,
@@ -30,10 +30,10 @@ class ModifyInformation extends Component {
     }
 
     componentWillMount(){
-        BackAndroid.addEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
     }
     componentWillUnmount(){
-        BackAndroid.removeEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
     //返回

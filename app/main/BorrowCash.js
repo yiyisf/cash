@@ -12,7 +12,7 @@ import {
     TouchableOpacity,
     Dimensions,
     Navigator,
-    BackAndroid, RefreshControl, TouchableWithoutFeedback,
+    BackHandler, RefreshControl, TouchableWithoutFeedback,
     InteractionManager,
     Slider,
 } from 'react-native'
@@ -44,12 +44,12 @@ class BorrowCash extends Component {
 
     componentWillMount() {
         console.log("componentWillMount");
-        BackAndroid.addEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
         this.onScrollDown();
     }
 
     componentWillUnmount() {
-        BackAndroid.removeEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
     buttonBackAction() {

@@ -15,7 +15,7 @@ const CenterItem = ({onPress, title, icon, rightIcon}) => (
     <TouchableWithoutFeedback style={styles.wrap_style} onPress={onPress}>
         <View style={{flexDirection: 'row'}}>
             <View style={styles.item_view}><Image style={styles.item_img} source={icon}/></View>
-            <View style={styles.item_view}><Text style={{marginLeft: 8}}>{title}</Text></View>
+            <View style={styles.item_view}><Text style={{marginLeft: 8, color: 'black'}}>{title}</Text></View>
             <View style={styles.item_arrow_view}><Image source={rightIcon}
                                                         style={{width: 12, height: 18}}/></View>
         </View>

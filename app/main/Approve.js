@@ -27,11 +27,11 @@ class Approve extends Component {
     }
 
     componentWillMount() {
-        // BackAndroid.addEventListener('hardwareBackPress', this.buttonBackAction);
+        // BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
     componentWillUnmount() {
-        // BackAndroid.removeEventListener('hardwareBackPress', this.buttonBackAction);
+        // BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
     //判断当前点击了那个按钮
@@ -86,7 +86,7 @@ class Approve extends Component {
 
                 </View>
                 <View style={{flex: 0.25, justifyContent:'center'}}>
-                    <Text style={{fontSize:15, marginLeft:10}}>基本资料</Text>
+                    <Text style={{fontSize:15, marginLeft:10,color:'darkslategray'}}>基本资料</Text>
                 </View>
                 <View style={{ backgroundColor:'white'}}>
                     <View style={{marginTop: 10}}></View>

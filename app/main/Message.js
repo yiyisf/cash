@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
     Dimensions,
     Navigator,
-    BackAndroid, RefreshControl, TouchableWithoutFeedback,
+    BackHandler, RefreshControl, TouchableWithoutFeedback,
 } from 'react-native'
 import {connect} from 'react-redux';
 import {NaviGoBack} from '../common/CommonUtils';
@@ -35,12 +35,12 @@ class Message extends Component {
     }
 
     componentWillMount() {
-        BackAndroid.addEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
         this.onScrollDown();
     }
 
     componentWillUnmount() {
-        BackAndroid.removeEventListener('hardwareBackPress', this.buttonBackAction);
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
     }
 
     buttonBackAction() {

@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import{ 
     View,
     Text,
-    BackAndroid,
+    BackHandler,
     TouchableOpacity,
     Image,
     StyleSheet,

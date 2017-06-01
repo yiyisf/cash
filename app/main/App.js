@@ -5,7 +5,7 @@ import React from 'react';
 import {
     StyleSheet,
     StatusBar,
-    BackAndroid,
+    BackHandler,
     View,
     Platform,
     StatusBarIOS,
@@ -24,7 +24,7 @@ class rootApp extends React.Component {
 
     constructor(props) {
         super(props);
-        // BackAndroid.addEventListener('hardwareBackPress', this.goBack);
+        // BackHandler.addEventListener('hardwareBackPress', this.goBack);
     }
 
     renderScene(route, navigator) {
