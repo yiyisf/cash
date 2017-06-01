@@ -143,4 +143,13 @@ export default styles = StyleSheet.create({
         height:120,
         justifyContent: 'space-around',
     },
+    input: {
+        height: 40,
+        width:240,
+        borderColor: 'red',
+        borderWidth: 1,
+        margin: 10,
+        borderRadius: 5,
+        padding: 5,
+    },
 });

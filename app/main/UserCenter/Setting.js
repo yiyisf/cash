@@ -19,6 +19,7 @@ import About from './About';
 import ResetPwd from  './ResetPwd';
 import Prepaid from './Prepaid';
 import styles from '../../common/Style';
+import Qrcode from '../Qrcode';
 
 class Setting extends Component {
   constructor(props) {
@@ -80,6 +81,13 @@ class Setting extends Component {
               name: 'About'
            });
         });
+      }else if(position === 9){
+          InteractionManager.runAfterInteractions(() => {
+              navigator.push({
+                  component: Qrcode,
+                  name: 'Qrcode'
+              });
+          });
       }
   }
 

@@ -44,6 +44,13 @@ class LoginDigits extends Component {
         this.getSessionDetails = this.getSessionDetails.bind(this);
     }
 
+    componentWillMount(){
+        BackHandler.addEventListener('hardwareBackPress', this.buttonBackAction);
+    }
+    componentWillUnmount(){
+        BackHandler.removeEventListener('hardwareBackPress', this.buttonBackAction);
+    }
+
     completion(error, response) {
         if (error && error.code !== 1) {
             this.setState({logged: false, error: true, response: {}});
