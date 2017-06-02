@@ -14,12 +14,13 @@ import{
 
 import {NaviGoBack} from '../../common/CommonUtils';
 import ShortLineTwo from '../../component/ShortLineTwo';
+import styles from '../../common/Style';
 
-var name = '';
-var email = '';
-var infor = '';
-var tel = '';
-var gender = '';
+let name = '';
+let email = '';
+let infor = '';
+let tel = '';
+let gender = '';
 
 class ModifyInformation extends Component {
     constructor(props) {
@@ -55,10 +56,10 @@ class ModifyInformation extends Component {
     render() {
         return (
             <View style={{backgroundColor: '#f5f5f5', flex: 1}}>
-                <View style={{height: 40, backgroundColor: '#389e7f', flexDirection: 'row', paddingTop: 10}}>
+                <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
                         this.buttonBackAction()
-                    }} style={{width: 48, height: 48, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={styles.headerTitle}>
                         <Image
                             style={{width: 13, height: 20}}
                             source={require('../../imgs/ic_center_back.png')}
@@ -249,11 +250,5 @@ class ModifyInformation extends Component {
         );
     }
 }
-const styles = StyleSheet.create({
-    item_layout: {
-        backgroundColor: 'white',
-        height: 45,
-        justifyContent: 'center'
-    }
-});
+
 export default ModifyInformation;
